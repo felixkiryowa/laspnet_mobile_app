@@ -15,9 +15,18 @@ addons:
 cache:
   directories:
     - ./node_modules
+before_script:
+  - export CC_TEST_REPORTER_ID=78ab713fc8ffea9015e00154c1786357554cd11ecf6c4ade583076e9dd2cfa62
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 install:
   - npm install
 
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - npm run test --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage

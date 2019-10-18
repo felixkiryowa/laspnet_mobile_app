@@ -1,1 +1,64 @@
 
+ion-content {
+    --background: #ffffff;
+}
+
+ion-app.force-statusbar-padding {
+    --ion-safe-area-top: 25px;
+}
+
+.icon-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.icons {
+    font-size: 30px;
+    width: 90px;
+}
+
+.icon-text {
+    text-align: var(--ion-heading-align);
+    font-weight: bold;
+    display: block;
+    color: #ffffff;
+}
+
+ion-grid, ion-row, ion-col{
+    height: 145px;
+  }
+
+.heading {
+    text-align: var(--ion-heading-align);
+    text-transform: var(--ion-heading-text-transform);
+  }
+
+.statusbar {
+    --background:var(--ion-color-primary);
+}
+
+
+
+.fancy-button {
+    --background: var(--charcoal, #36454f);
+    --border-radius: 24px;
+    --background-hover: red;
+    --color: black;
+}
+
+.lost-word {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase
+}
+
+ion-grid ion-row, ion-col{
+    margin: 2px;
+  }
+
+.row {
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+

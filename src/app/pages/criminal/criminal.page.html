@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="color:#13346e;">Criminal Case Filing</ion-card-title>
+      <br>
+      <ion-card-subtitle>
+        Magistrates Courts Act
+      </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list *ngFor="let act of magistrateCourtAct">
+        <ion-item lines="full"  [routerLink]="['/criminal-details', act.id]" routerDirection="forward">
+          <ion-label>
+              <ion-label class="ion-text-wrap">
+                  <ion-text color="primary"  style="font-weight:bold;">
+                      <h2>Step {{ act.id }}</h2>
+                  </ion-text>
+                  Institution of proceedings.
+                  Section {{ act.id}}
+                </ion-label>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

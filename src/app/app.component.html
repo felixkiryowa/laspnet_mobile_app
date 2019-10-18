@@ -1,3 +1,46 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <ion-menu side="start" contentId="content1"  color="primary">
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Quick Menu Access</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-item routerLink="/case-filing" routerDirection="forward">
+                <ion-icon name="briefcase" style="color: #13346e;" class="icons"></ion-icon>
+                <span style="color:#13346e;margin-left: 20px;">Case Filing</span>
+            </ion-item>
+            <ion-item routerLink="/find-case" routerDirection="forward">
+                <ion-icon name="search" style="color: #13346e;" class="icons"></ion-icon>
+                <span class="icon-text" style="color:#13346e;margin-left: 20px;">Case Tracking</span>
+            </ion-item>
+            <ion-item>
+                <ion-icon class="icons" style="color: #13346e;" name="videocam"></ion-icon>
+                <span class="icon-text" style="color:#13346e;margin-left: 20px;">Live Streaming</span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="list-box" style="color: #13346e;" class="icons"></ion-icon>
+                <span class="icon-text" style="color:#13346e;margin-left: 20px;">Case Listing</span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="call" style="color: #13346e;" class="icons"></ion-icon>
+                <span class="icon-text" style="color:#13346e;margin-left: 20px;">Report Corruption</span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="help-circle" style="color: #13346e;" class="icons"></ion-icon>
+                <span class="icon-text" style="color:#13346e;margin-left: 20px;">Help</span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="desktop" class="icons" style="color: #13346e;" ></ion-icon>
+                <span class="icon-text" style="color:#13346e;margin-left: 20px;">Judiciary News</span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="link" class="icons" style="color:#13346e;"></ion-icon>
+                <span class="icon-text" style="color:#13346e;margin-left: 20px;">Userful Links</span>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+    </ion-menu>
+  <ion-router-outlet id="content1" main></ion-router-outlet>
 </ion-app>

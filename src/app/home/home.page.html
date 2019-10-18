@@ -1,14 +1,68 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title class="heading">
+      uganda court cases app
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+    <ion-grid>
+        <ion-row class="fadeInDownBig row">
+          <ion-col style="background-color: #13346e;" routerLink="/case-filing" routerDirection="forward">
+              <div class="icon-container">
+                  <ion-icon name="briefcase" style="color: white;" class="icons"></ion-icon>
+                  <span class="icon-text">Case Filing</span>
+              </div>
+          </ion-col>
+          <ion-col style="background-color: #13346e;" size="7" routerLink="/find-case" routerDirection="forward">
+            <div class="icon-container">
+                <ion-icon name="search" style="color: white;" class="icons"></ion-icon>
+                <span class="icon-text">Case Tracking</span>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="bounceInRight row">
+            <ion-col style="background-color: #13346e;" routerLink="/menu" size="7">
+              <div class="icon-container">
+                  <ion-icon class="icons" style="color: white;" name="videocam"></ion-icon>
+                  <span class="icon-text">Live Streaming</span>
+              </div>
+            </ion-col>
+            <ion-col style="background-color: #13346e;">
+                <div class="icon-container">
+                    <ion-icon name="list-box" style="color: white;" class="icons"></ion-icon>
+                    <span class="icon-text">Case Listing</span>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="bounceInLeft row">
+            <ion-col style="background-color: #13346e;">
+                <div class="icon-container">
+                    <ion-icon name="call" style="color: white;" class="icons"></ion-icon>
+                    <span class="icon-text">Report Corruption</span>
+                </div>
+            </ion-col>
+            <ion-col style="background-color: #13346e;" size="7">
+                <div class="icon-container">
+                    <ion-icon name="help-circle" style="color: white;" class="icons"></ion-icon>
+                    <span class="icon-text">Help</span>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="fadeInUpBig row">
+            <ion-col style="background-color: #13346e;" size="7">
+                <div class="icon-container">
+                    <ion-icon name="desktop" class="icons" style="color: white;" ></ion-icon>
+                    <span class="icon-text">Judiciary News</span>
+                </div>
+            </ion-col>
+            <ion-col style="background-color: #13346e;">
+                <div class="icon-container">
+                    <ion-icon name="link" class="icons" style="color: white;"></ion-icon>
+                    <span class="icon-text">Userful Links</span>
+                </div>
+            </ion-col> 
+        </ion-row>
+      </ion-grid>
 </ion-content>

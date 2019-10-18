@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defautHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Case-Filing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="criminal" (click)="criminalCases()" [ngStyle]="{'border-bottom': criminal ? '5px solid #13346e' : 'none' }">
+        <ion-icon name="briefcase"></ion-icon>
+        <ion-label>Criminal Case</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="civil" (click)="civilCases()" [ngStyle]="{'border-bottom': civil ? '5px solid #13346e' : 'none' }">
+        <ion-icon name="briefcase"></ion-icon>
+        <ion-label>Civil Case</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

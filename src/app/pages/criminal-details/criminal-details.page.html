@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Magistrate Court Act</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-title style="text-align: center;color:#13346e;font-weight: bold;" size="12">Section 42 : Sub section {{ sectionId }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+      <ion-card-header >
+        <p style="display: inline">
+            <ion-icon name="book" style="color: #13346e;font-size: 30px;"></ion-icon>
+            <span style="color: #13346e;">Step {{ sectionId }}</span>
+        </p>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text style="word-wrap: break-word;font-size: 15px;color: #13346e;">
+            {{ specificSection[0].section}}
+        </ion-text>
+        <div *ngIf="specificSection[0].steps.length !== 0">
+          <ul *ngFor="let step of specificSection[0].steps">
+              <li style="border-bottom: 2px solid #13346e;font-size: 15px;color: #13346e;padding-bottom: 10px;">{{ step.step }}</li>
+              <hr>
+          </ul>
+        </div>
+      </ion-card-content>
+  </ion-card>
+</ion-content>

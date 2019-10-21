@@ -1,5 +1,7 @@
 {
   "name": "laspnet_mobile_app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

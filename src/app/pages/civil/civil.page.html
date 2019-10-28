@@ -1,0 +1,27 @@
+<ion-content>
+   <ion-card>
+     <ion-card-header>
+       <ion-card-title style="color:#13346e;">Civil Case Filing</ion-card-title>
+       <br>
+       <ion-card-subtitle>
+          Steps followed to file a civil case
+       </ion-card-subtitle>
+     </ion-card-header>
+   
+     <ion-card-content>
+       <ion-list *ngFor="let procedure of civilCaseProcedures">
+         <ion-item lines="full"  [routerLink]="['/civil-details', procedure.id]" routerDirection="forward">
+           <ion-label>
+               <ion-label class="ion-text-wrap">
+                   <ion-text color="primary"  style="font-weight:bold;">
+                       <h2>Step {{ procedure.id }}</h2>
+                   </ion-text>
+                   {{ procedure.step}}
+                 </ion-label>
+           </ion-label>
+         </ion-item>
+       </ion-list>
+     </ion-card-content>
+   </ion-card>
+ </ion-content>
+ 

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ caseDetail.title }}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <table>
+      <tr>
+        <td>Case # :</td>
+        <td>{{caseDetail.caseId}}</td>
+      </tr>
+      <tr>
+        <td>Judicial Officer :</td>
+        <td>Justice Esther Nakimera</td>
+      </tr>
+      <tr>
+        <td>Category :</td>
+        <td>{{ caseDetail.caseTypeId }}</td>
+      </tr>
+    </table>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <table style="border: 1px solid #13346e;">
+    <tr style="background-color: #13346e;">
+      <th style="color:#ffffff">Date/Time</th>
+      <th style="color:#ffffff">Charge</th>
+      <th style="color:#ffffff">Sitting Type</th>
+    </tr>
+    <tr *ngFor="let detail of caseData">
+        <td> {{ detail.date }} </td>
+        <td> {{ detail.charge }} </td>
+        <td> {{ detail.sittingType }} </td>
+    </tr>
+  </table>
+</ion-content>

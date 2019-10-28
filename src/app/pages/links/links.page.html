@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Useful Links</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div *ngFor="let url of  linkUrls">
+        <ion-list-header >
+            {{ url.linkHeader }}
+        </ion-list-header>
+        <ion-item *ngFor="let link of url.links">
+          <a href="{{link.linkName}}">{{ link.linkName }}</a>
+        </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

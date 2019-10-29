@@ -1,9 +1,13 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defautHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Civil Case</ion-title>
+        <ion-button slot="start" *ngIf="disableBackwardButton" (click)="backStep(procedure[0].id)">
+          <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
+          Back
+        </ion-button>
+        <ion-button slot="end" *ngIf="disableFowardButton" (click)="nextStep(procedure[0].id)">
+          Next
+          <ion-icon ios="ios-arrow-round-forward" md="md-arrow-round-forward"></ion-icon>
+        </ion-button>
   </ion-toolbar>
   <ion-toolbar>
       <ion-title style="text-align: center;color:#13346e;font-weight: bold;" size="12">{{procedure[0].step}}</ion-title>
@@ -19,9 +23,9 @@
       </p>
     </ion-card-header>
     <ion-card-content>
-      <ion-text style="word-wrap: break-word;font-size: 15px;color: #13346e;">
+      <p style="font-size: 16px;color: #000000;" class="ion-text-justify">
           {{ procedure[0].description}}
-      </ion-text>
+      </p>
     </ion-card-content>
 </ion-card>
 </ion-content>

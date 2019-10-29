@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Found Cause Listings</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-title style="text-align: center;color:#13346e;" size="12"> <b  style="font-weight:bold;">High Court Uganda</b></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header >
+          <p style="display: inline">
+             Select Results To View Extra Details
+          </p>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list *ngFor="let result of searchedCauseListings">
+            <ion-list-header style="color: #13346e;font-weight:bold;text-decoration: underline;">
+               {{ result.parties }}
+            </ion-list-header>
+            <ion-item (click)="goToCauseListDetailPage(result)">
+                <ul>
+                  <li style="list-style-type: none;">Case Category: <b>{{ result.caseCategory }}</b></li>
+                  <li style="list-style-type: none;">Case Number: <b>{{ result.caseNumber }}</b></li>
+                </ul>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

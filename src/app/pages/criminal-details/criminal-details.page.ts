@@ -10,6 +10,8 @@ export class CriminalDetailsPage implements OnInit {
 
   sectionId: any = null;
   specificSection: Array<any>;
+  disableFowardButton: boolean = true;
+  disableBackwardButton: boolean = true;
 
   magistrateCourtAct: Array<any> = [
     {
@@ -135,11 +137,34 @@ export class CriminalDetailsPage implements OnInit {
   ngOnInit() {
     this.sectionId = this.activatedRoute.snapshot.paramMap.get('sectionId');
     this.filterSection(parseInt(this.sectionId));
+    if(parseInt(this.sectionId) === 1){
+      this.disableBackwardButton = false;
+    }
   }
 
   filterSection(sectionId: number) {
      this.specificSection =  this.magistrateCourtAct.filter(section => section.id === sectionId);
-     
   }
 
+  nextStep(stepId:any) {
+    this.sectionId = parseInt(stepId) + 1;
+    this.filterSection(this.sectionId);
+    if(parseInt(this.sectionId) > 1) {
+      this.disableBackwardButton = true;
+    }
+    if(parseInt(this.sectionId) === 10) {
+      this.disableFowardButton = false;
+    }
+  }
+
+  backStep(stepId:any) {
+    this.sectionId =  parseInt(stepId) - 1;
+    this.filterSection(this.sectionId);
+    if(parseInt(this.sectionId) <= 9){
+      this.disableFowardButton = true;
+    }
+    if(parseInt(this.sectionId) === 1){
+      this.disableBackwardButton = false;
+    }
+  }
 }

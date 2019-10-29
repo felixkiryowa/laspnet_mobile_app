@@ -1,0 +1,11 @@
+// Extra large devices (large desktops, 414px and up)
+@media (min-width: 414px) { 
+    #search {
+        border-radius: 10px;
+        margin-bottom: 10px;
+        border: 2px solid gray;
+        color: #000000;
+        margin-left: 5px;
+        height: 100px;
+    }
+}

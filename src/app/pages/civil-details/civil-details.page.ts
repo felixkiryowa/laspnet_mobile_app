@@ -10,6 +10,8 @@ export class CivilDetailsPage implements OnInit {
 
   procedure: Array<any>;
   procedureId: any;
+  disableFowardButton: boolean = true;
+  disableBackwardButton: boolean = true;
 
   civilCaseProcedures: Array<any> = [
     {
@@ -91,11 +93,36 @@ export class CivilDetailsPage implements OnInit {
   ngOnInit() {
     this.procedureId = this.activatedRoute.snapshot.paramMap.get('procedureId');
     this.getProcedure(parseInt(this.procedureId));
+    if(parseInt(this.procedureId) === 1){
+      this.disableBackwardButton = false;
+    }
   }
 
 
   getProcedure(procedureId: number) {
     this.procedure = this.civilCaseProcedures.filter(procedure => procedure.id === procedureId);
+  }
+
+  nextStep(stepId:any) {
+    this.procedureId = parseInt(stepId) + 1;
+    this.getProcedure(this.procedureId);
+    if(parseInt(this.procedureId) > 1) {
+      this.disableBackwardButton = true;
+    }
+    if(parseInt(this.procedureId) === 6) {
+      this.disableFowardButton = false;
+    }
+  }
+
+  backStep(stepId:any) {
+    this.procedureId =  parseInt(stepId) - 1;
+    this.getProcedure(this.procedureId);
+    if(parseInt(this.procedureId) <= 5){
+      this.disableFowardButton = true;
+    }
+    if(parseInt(this.procedureId) === 1){
+      this.disableBackwardButton = false;
+    }
   }
 
 }

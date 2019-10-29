@@ -13,8 +13,8 @@ ion-app.force-statusbar-padding {
 }
 
 .icons {
-    font-size: 30px;
-    width: 90px;
+    font-size: 80px !important;
+    color: #fff !important;
 }
 
 .icon-text {
@@ -24,9 +24,16 @@ ion-app.force-statusbar-padding {
     color: #ffffff;
 }
 
-ion-grid, ion-row, ion-col{
-    height: 145px;
-  }
+.container1, .container2{
+    background: #13346e; 
+    color: #fff; 
+    padding: 10px; 
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .heading {
     text-align: var(--ion-heading-align);
@@ -51,10 +58,6 @@ ion-grid, ion-row, ion-col{
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase
 }
-
-ion-grid ion-row, ion-col{
-    margin: 2px;
-  }
 
 .row {
     animation-duration: 3s;

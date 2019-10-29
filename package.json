@@ -22,12 +22,20 @@
     "@angular/router": "~8.1.2",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/in-app-browser": "^5.15.1",
+    "@ionic-native/file-transfer": "^5.16.0",
+    "@ionic-native/media-capture": "^5.16.0",
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/status-bar": "^5.0.0",
+    "@ionic-native/youtube-video-player": "^5.0.0",
     "@ionic/angular": "^4.7.1",
     "cordova-android": "^8.1.0",
     "cordova-plugin-inappbrowser": "^3.1.0",
+    "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-file-transfer": "^1.7.1",
+    "cordova-plugin-media-capture": "^3.0.3",
+    "cordova-plugin-youtube-video-player": "^2.3.0",
     "core-js": "^2.5.4",
+    "ionic-selectable": "^4.4.0",
     "ng-bullet": "^1.0.3",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
@@ -78,7 +86,11 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-bambuser": {},
+      "cordova-plugin-youtube-video-player": {},
+      "cordova-plugin-media-capture": {},
+      "cordova-plugin-file-transfer": {}
     },
     "platforms": [
       "android"

@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defautHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Cause-Listing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+          <form [formGroup]="findCaseListingForm" (ngSubmit)="viewCaseListing()">
+            <ion-list>
+              <ion-item>
+                    <ion-label class="content-alignment">Case Type</ion-label>
+                    <ion-select formControlName="caseTypeId"  id="rounded">
+                      <ion-select-option value="1">Criminal Case</ion-select-option>
+                      <ion-select-option value="2">Civil Case</ion-select-option>
+                    </ion-select>
+              </ion-item>
+              <div  *ngIf="(findCaseListingForm.controls['caseTypeId'].touched || findCaseListingForm.controls['caseTypeId'].dirty )
+                && !findCaseListingForm.controls['caseTypeId'].valid">
+                <ion-text class="content-alignment" color="danger" [hidden]="!findCaseListingForm.controls['caseTypeId'].errors.required">
+                  Case Type is required
+                </ion-text>
+              </div>
+              <ion-item>
+                  <ion-label class="content-alignment">Court Level</ion-label>
+                  <ionic-selectable
+                    item-content
+                    formControlName="courtLevelId"
+                    [items]="courts"
+                    itemValueField="id"
+                    itemTextField="court"
+                    [canSearch]="true"
+                    (onChange)="courtLevelChange($event)">
+                  </ionic-selectable>
+              </ion-item>
+              <div  *ngIf="(findCaseListingForm.controls['courtLevelId'].touched || findCaseListingForm.controls['courtLevelId'].dirty )
+                  && !findCaseListingForm.controls['courtLevelId'].valid">
+                    <ion-text class="content-alignment" color="danger" [hidden]="!findCaseListingForm.controls['courtLevelId'].errors.required">
+                      Case Level is required
+                    </ion-text>
+              </div>
+              <ion-item *ngIf="!disableOfficerNameField && judicialOfficerNames.length !== 0">
+                  <ion-label class="content-alignment">Division/Region</ion-label>
+                  <ionic-selectable
+                    item-content
+                    formControlName="division"
+                    [items]="divisions"
+                    itemValueField="id"
+                    itemTextField="division"
+                    [canSearch]="true"
+                    (onChange)="DivisionChange($event)">
+                  </ionic-selectable>
+              </ion-item>
+              <ion-item 
+                  *ngIf="!disableOfficerNameField && judicialOfficerNames.length !== 0"
+                  >
+                  <ion-label class="content-alignment">Judicial Officer Name</ion-label>
+                  <ion-select 
+                  id="rounded"
+                  formControlName="officerNameId" 
+                  >
+                    <ion-select-option *ngFor="let name of  judicialOfficerNames" value="{{name.id}}">{{name.officer}}</ion-select-option>
+                  </ion-select>
+              </ion-item>
+              <div  *ngIf="(findCaseListingForm.controls['officerNameId'].touched || findCaseListingForm.controls['officerNameId'].dirty )
+                && !findCaseListingForm.controls['officerNameId'].valid">
+                  <ion-text class="content-alignment" color="danger" [hidden]="!findCaseListingForm.controls['officerNameId'].errors.required">
+                    Judicial Officer Name  is required
+                  </ion-text>
+              </div>
+              <br>
+              <br>
+              <br>
+            </ion-list>
+            <ion-label class="content-alignment">Parties, Case number</ion-label>
+            <ion-input formControlName="searchTerm"   style="padding-left:10px !important;" placeholder="Keyword Search" id="search"></ion-input>
+            <div  *ngIf="(findCaseListingForm.controls['searchTerm'].touched || findCaseListingForm.controls['searchTerm'].dirty )
+            && !findCaseListingForm.controls['searchTerm'].valid">
+              <ion-text class="content-alignment" color="danger" [hidden]="!findCaseListingForm.controls['searchTerm'].errors.required">
+                Search Term  is required
+              </ion-text>
+            </div>
+            <br>
+            <br>
+            <ion-button  size="large"  id="submitForm" expand="block" [disabled]="findCaseListingForm.invalid" type="submit" color="primary">
+              VIEW CASE LISTING
+            </ion-button>
+          </form>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

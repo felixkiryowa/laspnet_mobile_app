@@ -21,13 +21,13 @@
                     <ion-select-option value="1">Criminal Case</ion-select-option>
                     <ion-select-option value="2">Civil Case</ion-select-option>
                   </ion-select>
-                  <div  *ngIf="(findCaseForm.controls['caseTypeId'].touched || findCaseForm.controls['caseTypeId'].dirty )
-                  && !findCaseForm.controls['caseTypeId'].valid">
-                    <ion-text color="danger" [hidden]="!findCaseForm.controls['caseTypeId'].errors.required">
-                      Case Type is required
-                    </ion-text>
-                  </div>
               </ion-item>
+              <div  *ngIf="(findCaseForm.controls['caseTypeId'].touched || findCaseForm.controls['caseTypeId'].dirty )
+              && !findCaseForm.controls['caseTypeId'].valid">
+                <ion-text style="padding-left: 18px !important;"  color="danger" [hidden]="!findCaseForm.controls['caseTypeId'].errors.required">
+                  Case Type is required
+                </ion-text>
+              </div>
               <ion-item>
                   <ion-label>Court Level</ion-label>
                   <ion-select 
@@ -40,13 +40,13 @@
                     value="{{court.id}}"
                     >{{court.court}}</ion-select-option>
                   </ion-select>
-                  <div  *ngIf="(findCaseForm.controls['courtLevelId'].touched || findCaseForm.controls['courtLevelId'].dirty )
+              </ion-item>
+              <div  *ngIf="(findCaseForm.controls['courtLevelId'].touched || findCaseForm.controls['courtLevelId'].dirty )
                   && !findCaseForm.controls['courtLevelId'].valid">
-                    <ion-text color="danger" [hidden]="!findCaseForm.controls['courtLevelId'].errors.required">
+                    <ion-text style="padding-left: 18px !important;" color="danger" [hidden]="!findCaseForm.controls['courtLevelId'].errors.required">
                       Case Level is required
                     </ion-text>
-                  </div>
-              </ion-item>
+              </div>
               <ion-item 
                   *ngIf="!disableOfficerNameField && judicialOfficerNames.length !== 0"
                   >
@@ -66,13 +66,13 @@
             <ion-input formControlName="searchTerm"   style="padding-left:10px !important;" placeholder="Keyword Search" id="search"></ion-input>
             <div  *ngIf="(findCaseForm.controls['searchTerm'].touched || findCaseForm.controls['searchTerm'].dirty )
             && !findCaseForm.controls['searchTerm'].valid">
-              <ion-text style="padding-left:10px;" color="danger" [hidden]="!findCaseForm.controls['searchTerm'].errors.required">
+              <ion-text style="padding-left:18px;" color="danger" [hidden]="!findCaseForm.controls['searchTerm'].errors.required">
                 Case Level is required
               </ion-text>
             </div>
             <br>
             <br>
-            <ion-button  id="submitForm" expand="block" [disabled]="findCaseForm.invalid" type="submit" color="primary">
+            <ion-button   size="large" id="submitForm" expand="block" [disabled]="findCaseForm.invalid" type="submit" color="primary">
               FIND MY CASE
             </ion-button>
           </form>

@@ -6,7 +6,6 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'case-filing', loadChildren: './pages/case-filing/case-filing.module#CaseFilingPageModule' },
-  { path: 'case-tracking', loadChildren: './pages/case-tracking/case-tracking.module#CaseTrackingPageModule' },
   { path: 'criminal-details/:sectionId', loadChildren: './pages/criminal-details/criminal-details.module#CriminalDetailsPageModule' },
   { path: 'civil-details/:procedureId', loadChildren: './pages/civil-details/civil-details.module#CivilDetailsPageModule' },
   { path: 'find-case', loadChildren: './pages/find-case/find-case.module#FindCasePageModule' },
@@ -17,7 +16,10 @@ const routes: Routes = [
   { path: 'news-details', loadChildren: './pages/news-details/news-details.module#NewsDetailsPageModule' },
   { path: 'links', loadChildren: './pages/links/links.module#LinksPageModule' },
   { path: 'report', loadChildren: './pages/report/report.module#ReportPageModule' },
-
+  { path: 'cause-listing', loadChildren: './pages/cause-listing/cause-listing.module#CauseListingPageModule' },
+  { path: 'cause-listing-results', loadChildren: './pages/cause-listing-results/cause-listing-results.module#CauseListingResultsPageModule' },
+  { path: 'cause-list-details', loadChildren: './pages/cause-list-details/cause-list-details.module#CauseListDetailsPageModule' },
+  { path: 'feedback', loadChildren: './pages/feedback/feedback.module#FeedbackPageModule' },
 ];
 
 @NgModule({

@@ -23,13 +23,13 @@
           </ion-col>
         </ion-row>
         <ion-row class="bounceInRight row">
-            <ion-col style="background-color: #13346e;" routerLink="/menu" size="7">
+            <ion-col style="background-color: #13346e;" (click)="startStreaming()" size="7">
               <div class="icon-container">
-                  <ion-icon class="icons" style="color: white;" name="videocam"></ion-icon>
-                  <span class="icon-text">Live Streaming</span>
+                  <ion-icon name="logo-youtube" color="danger" class="icons"></ion-icon>
+                  <span class="icon-text" color="danger">YouTube Streaming</span>
               </div>
             </ion-col>
-            <ion-col style="background-color: #13346e;">
+            <ion-col style="background-color: #13346e;" routerLink="/cause-listing" routerDirection="forward">
                 <div class="icon-container">
                     <ion-icon name="list-box" style="color: white;" class="icons"></ion-icon>
                     <span class="icon-text">Case Listing</span>
@@ -37,16 +37,16 @@
             </ion-col>
         </ion-row>
         <ion-row class="bounceInLeft row">
-            <ion-col style="background-color: #13346e;" routerLink="/report">
-                <div class="icon-container">
-                    <ion-icon name="call" style="color: white;" class="icons"></ion-icon>
-                    <span class="icon-text">Report Corruption</span>
-                </div>
-            </ion-col>
-            <ion-col style="background-color: #13346e;" routerLink="/help" size="7">
+            <ion-col style="background-color: #13346e;" routerLink="/help">
                 <div class="icon-container">
                     <ion-icon name="help-circle" style="color: white;" class="icons"></ion-icon>
                     <span class="icon-text">Help</span>
+                </div>
+            </ion-col>
+            <ion-col style="background-color: #13346e;" routerLink="/feedback" routerDirection="forward" size="7">
+                <div class="icon-container">
+                    <ion-icon name="call" style="color: white;" class="icons"></ion-icon>
+                    <span class="icon-text">Report Corruption</span>
                 </div>
             </ion-col>
         </ion-row>

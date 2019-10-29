@@ -1,70 +1,53 @@
 
 
-<ion-content color="light">
+<ion-content>
   <div class="ion-text-center">
-      <h3>Contact Us</h3>
+      <h3  style="color:#13346e;">Contact Us</h3>
     </div>
 
-  <!-- New Wave Technologies Ltd
-  128 Old Kira Road,
-  2nd Floor, Kamure House,
-  P.O.BOX 24159,
-  Kampala, Uganda
-  Tel: 0414 389220 -->
-
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
-      <ion-item>
-          <ion-label position='floating'>Email</ion-label>
-          <ion-input formControlName="email"></ion-input>
-      </ion-item>
-
-      <div *ngIf="submitted && frm.email.errors" class="invalid-feedback">
-          <ion-item *ngIf="frm.email.errors.required">
-              <p style="color:red">Email is required!</p>
-          </ion-item>
-          <ion-item *ngIf="frm.email.errors.email">
-              <p style="color:red">Email must be a valid email address!</p>
-          </ion-item>
-      </div>        
-
-      <ion-item>
-          <ion-label position='floating'>Password</ion-label>
-          <ion-input type="password" formControlName="password"></ion-input>
-      </ion-item>
-
-      <div *ngIf="submitted && frm.password.errors" class="invalid-feedback">
-          <ion-item *ngIf="frm.password.errors.required">
-              <p style="color:red">Password is required!</p>
-          </ion-item>
-          <ion-item *ngIf="frm.password.errors.minlength">
-              <p style="color:red">Password must be at least 6 characters!</p>
-          </ion-item>
-        </div>
-
-        <ion-item>
-            <ion-label position='floating'>Message</ion-label>
-            <!-- <ion-input type="textarea" formControlName="name"></ion-input> -->
-            <ion-textarea formControlName="name"></ion-textarea>
-        </ion-item>
-        <div *ngIf="submitted && frm.name.errors" class="invalid-feedback">
-            <ion-item *ngIf="frm.name.errors.required">
-                <p style="color:red">Message is required!</p>
-            </ion-item>
-            <ion-item *ngIf="frm.name.errors.minlength">
-                <p style="color:red">Message must be at least 6 characters!</p>
-            </ion-item>
-          </div>
-
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-button expand="block" size="medium" type="submit" outline>Submit</ion-button>    
-                </ion-col>
-                <ion-col>
-                    <ion-button expand="block" size="medium" type="reset" (click)="onReset()">Cancel</ion-button> 
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </form>
-
+  <ion-card>
+      <ion-card-content>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+                <ion-label
+                class="content-alignment"
+                >
+                 Email
+                </ion-label>
+                  <ion-input 
+                    class="content-alignment" 
+                    placeholder="Enter email"
+                    formControlName="email"
+                    id="search" 
+                  ></ion-input>
+                  <div  *ngIf="(contactForm.controls['email'].touched || contactForm.controls['email'].dirty )
+                    && !contactForm.controls['email'].valid">
+                    <ion-text style="padding-left:10px;" color="danger" [hidden]="!contactForm.controls['email'].errors.required">
+                      Email is required
+                    </ion-text>
+                  </div>
+                  <div  *ngIf="(contactForm.controls['email'].touched || contactForm.controls['email'].dirty )
+                    && !contactForm.controls['email'].valid">
+                    <ion-text style="padding-left:10px;" color="danger" [hidden]="!contactForm.controls['email'].errors.email">
+                        Email must be a valid email address! 
+                    </ion-text>
+                  </div>
+                  <ion-label
+                    class="content-alignment"
+                    >
+                    Message
+                  </ion-label>
+                  <ion-textarea class="content-alignment" placeholder="Enter Message" formControlName="message" id="search">
+                  </ion-textarea>
+                 <div  *ngIf="(contactForm.controls['message'].touched || contactForm.controls['message'].dirty )
+                  && !contactForm.controls['message'].valid">
+                    <ion-text class="content-alignment" color="danger" [hidden]="!contactForm.controls['message'].errors.required">
+                      Message  is required
+                    </ion-text>
+                  </div>
+                  <br>
+                  <br>
+                  <ion-button color="primary" size="large" [disabled]="contactForm.invalid" type="submit" expand="block">CONTACT</ion-button>
+          </form>
+      </ion-card-content>
+  </ion-card>
 </ion-content>

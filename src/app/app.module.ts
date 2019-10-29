@@ -8,6 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
+import { YoutubeVideoPlayer  } from '@ionic-native/youtube-video-player/ngx';
+import { MediaCapture} from '@ionic-native/media-capture/ngx';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,6 +19,9 @@ import { AppRoutingModule } from './app-routing.module';
   entryComponents: [],
   imports: [BrowserModule, HttpClientModule,  IonicModule.forRoot(), AppRoutingModule],
   providers: [
+    YoutubeVideoPlayer,
+    MediaCapture,
+    FileTransfer,
     StatusBar,
     SplashScreen,
     InAppBrowser,

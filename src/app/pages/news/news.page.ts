@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-news',
@@ -8,18 +9,37 @@ import { ApiService } from '../../api.service';
 })
 export class NewsPage implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  articles: Array<any>;
+  loading: any;
+
+  constructor(
+    private apiService: ApiService,
+    private loadingController: LoadingController
+    ) { }
 
   ngOnInit() {
+    this.getNews();
   }
 
-  articles;
+  // Function to present loading
+  async presentLoadingWithOptions() {
+    this.loading = await this.loadingController.create({
+      spinner: 'crescent',
+      message: 'Please wait...',
+      translucent: true,
+      cssClass: 'custom-class custom-loading'
 
-  ionViewDidEnter(){
+    });
+    return await this.loading.present();
+  }
 
+  getNews(){
+    this.presentLoadingWithOptions();
     this.apiService.getNews().subscribe((data)=>{
-      console.log(data);
+      this.loading.dismiss();
       this.articles = data['articles'];
+    }, err => {
+      this.loading.dismiss();
     });
   }
 

@@ -3,7 +3,6 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
-  NgForm,
 } from '@angular/forms';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -142,7 +141,7 @@ export class FindCasePage implements OnInit {
     private formBuilder: FormBuilder,
     private loadingController: LoadingController,
     private alertController: AlertController,
-    public router : Router
+    private router : Router
   ) { 
     this.findCaseForm = this.formBuilder.group({
        'caseTypeId': ['', Validators.compose([Validators.required])],
@@ -172,7 +171,7 @@ export class FindCasePage implements OnInit {
   async showLoader() {
     const loading = await this.loadingController.create({
       spinner: 'crescent',
-      duration: 5000,
+      duration: 2000,
       message: 'Please wait...',
       translucent: true,
       cssClass: 'primary'
@@ -200,7 +199,7 @@ export class FindCasePage implements OnInit {
   }
 
   
-  // Function to route to the find search results page
+  // Function to route to the display searched results page
   goToFindCaseResults(data: Array<any>){
     data.length === 0 ? this.presentAlert() :
     this.router.navigate(['/find-case-results'],{

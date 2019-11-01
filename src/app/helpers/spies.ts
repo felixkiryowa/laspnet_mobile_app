@@ -14,7 +14,7 @@ export class Spies {
       };
       
     static createSpyObj = (name: string, methods: string[]) => {
-        return jasmine.createSpyObj(name, methods);
+        // return jasmine.createSpyObj(name, methods);
       };
       
 

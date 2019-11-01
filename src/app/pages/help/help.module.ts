@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo:'/help/contact',
+    redirectTo:'help/contact',
     pathMatch: 'full'  
   }
 ];

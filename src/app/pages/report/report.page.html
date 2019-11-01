@@ -1,9 +1,77 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>report</ion-title>
+  <ion-toolbar color='primary'>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Report Corruption</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+<form  [formGroup]="reportForm" (ngSubmit)="onSubmit(reportForm.value)">
 
+      <ion-item>
+              <ion-label position='floating'>Name</ion-label>
+              <ion-input formControlName="name"></ion-input>
+          </ion-item>
+          
+          <div *ngIf="submitted && frm.name.errors" class="invalid-feedback">
+              <ion-item *ngIf="frm.name.errors.required">
+                  <p style="color:red">Name is required!</p>
+              </ion-item>
+              <ion-item *ngIf="frm.name.errors.minlength">
+                  <p style="color:red">Name must be at least 4 characters!</p>
+              </ion-item>
+            </div>
+
+<ion-item>
+  <ion-label position='floating'>Email address</ion-label>
+  <ion-input formControlName="email"></ion-input>
+</ion-item>
+
+<div *ngIf="submitted && frm.email.errors" class="invalid-feedback">
+  <ion-item *ngIf="frm.email.errors.required">
+      <p style="color:red">Email is required!</p>
+  </ion-item>
+  <ion-item *ngIf="frm.email.errors.email">
+      <p style="color:red">Email address must be valid!</p>
+  </ion-item>
+</div>        
+
+
+
+<ion-item>
+    <ion-label position='floating'>Complaint</ion-label>
+    <!-- <ion-input type="textarea" formControlName="name"></ion-input> -->
+    <ion-textarea formControlName="complaint"></ion-textarea>
+</ion-item>
+<div *ngIf="submitted && frm.complaint.errors" class="invalid-feedback">
+    <ion-item *ngIf="frm.complaint.errors.required">
+        <p style="color:red">Complaint is required!</p>
+    </ion-item>
+    <ion-item *ngIf="frm.complaint.errors.minlength">
+        <p style="color:red">Complaint must be at least 6 characters!</p>
+    </ion-item>
+  </div>
+
+  <ion-row>
+  <ion-col>
+      <ion-icon ios="ios-videocam" md="md-videocam" (click)="recordVideo()"></ion-icon>
+  </ion-col>
+  <ion-col>
+      <ion-icon ios="ios-volume-up" md="md-volume-up" (click)="recordAudio()"></ion-icon>
+  </ion-col>
+  </ion-row>
+
+<ion-grid>
+    <ion-row>
+        <ion-col>
+            <ion-button expand="block" size="medium" type="submit" outline>Submit</ion-button>    
+        </ion-col>
+        <ion-col>
+            <ion-button expand="block" size="medium" type="reset" (click)="onReset()">Cancel</ion-button> 
+        </ion-col>
+    </ion-row>
+</ion-grid>
+</form>
+  
 </ion-content>

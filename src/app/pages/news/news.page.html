@@ -3,31 +3,22 @@
       <ion-buttons slot="start">
           <ion-back-button defaultHref="/"></ion-back-button>
         </ion-buttons>
-    <ion-title>News</ion-title>
+    <ion-title>Judiciary News</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+      <ion-title style="text-align: center;color:#13346e;font-weight: bold;" size="12">Welcome to our News Page</ion-title>     
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Welcome to our News Page</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          <p>
-            Enjoy the latest news from Judiciary. 
-          </p>
-          <ion-spinner *ngIf="!articles"  name="dots"></ion-spinner>
-        </ion-card-content>
-      </ion-card>
-
       <ion-card *ngFor="let article of articles">
           <ion-img src="{{article.urlToImage}}"></ion-img>
           <ion-card-header>
-            <ion-card-subtitle>{{article.title}}</ion-card-subtitle>
+            <ion-card-subtitle style="color:#13346e;font-size: 16px;">{{article.title}}</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            <p>
+            <p class="ion-text-justify" style="font-size: 16px;color:#000000">
               {{article.description}}
             </p>
             <ion-button ion-button fill="outline" href="{{article.url}}" large>Read full article</ion-button>

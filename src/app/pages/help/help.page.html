@@ -2,7 +2,7 @@
   <ion-toolbar color='primary'>
       <ion-buttons slot="start">
           <ion-back-button defaultHref="/"></ion-back-button>
-        </ion-buttons>
+      </ion-buttons>
     <ion-title>Help</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,15 +11,11 @@
 
     <ion-tabs>
         <ion-tab-bar slot="top">
-          <ion-tab-button tab="contact">
+          <ion-tab-button tab="contact" (click)="contact()" [ngStyle]="{'border-bottom': contactUs ? '5px solid #13346e' : 'none' }">
             <ion-icon name="contact"></ion-icon>
             <ion-label>Contact</ion-label>
           </ion-tab-button>
-          <ion-tab-button tab="faq">
-              <ion-icon name="flash"></ion-icon>
-              <ion-label>FAQs</ion-label>
-            </ion-tab-button>
-          <ion-tab-button tab="about">
+          <ion-tab-button tab="about" (click)="about()" [ngStyle]="{'border-bottom': aboutUs ? '5px solid #13346e' : 'none' }">
             <ion-icon name="apps"></ion-icon>
             <ion-label>About App</ion-label>
           </ion-tab-button>

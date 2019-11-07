@@ -12,14 +12,14 @@ export class ContactPage implements OnInit {
   submitted = false;
   contactForm: FormGroup;
 
-  constructor(private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private formBuilder: FormBuilder) { 
+    this.contactForm = this.formBuilder.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      message: ['', Validators.compose([Validators.required])],
+    });
+  }
 
   ngOnInit() {
-    this.contactForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      name: ['', Validators.compose([Validators.minLength(4), Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-  }, {});
   }
 
   onSubmit(value: any): void { 

@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defautHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Report-Corruption</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="feedBackForm" (ngSubmit)="addFeedBack()">
+          <ion-list>
+              <ion-item>
+                  <ion-label>Select Feedback Type</ion-label>
+                  <ion-select 
+                  (ionChange)="getFeedBackType($event)" 
+                  id="rounded">
+                    <ion-select-option value="1">Text</ion-select-option>
+                    <ion-select-option value="2">Video</ion-select-option>
+                    <ion-select-option value="3">Audio</ion-select-option>
+                  </ion-select>
+              </ion-item>
+            </ion-list>
+          <ion-label
+          class="content-alignment"
+          >
+              Names
+          </ion-label>
+            <ion-input 
+              class="content-alignment" 
+              placeholder="Enter Names"
+              formControlName="names"
+              id="search" 
+            ></ion-input>
+            <div  *ngIf="(feedBackForm.controls['names'].touched || feedBackForm.controls['names'].dirty )
+              && !feedBackForm.controls['names'].valid">
+              <ion-text style="padding-left:10px;" color="danger" [hidden]="!feedBackForm.controls['names'].errors.required">
+                Names are required
+              </ion-text>
+            </div>
+            <ion-label
+            class="content-alignment"
+            >
+                Location
+              </ion-label>
+              <ion-input 
+                placeholder="Enter Location" 
+                class="content-alignment"
+                formControlName="location" 
+                id="search"
+            ></ion-input>
+            <div  *ngIf="(feedBackForm.controls['location'].touched || feedBackForm.controls['location'].dirty )
+            && !feedBackForm.controls['location'].valid">
+              <ion-text class="content-alignment" color="danger" [hidden]="!feedBackForm.controls['location'].errors.required">
+                Location is required
+              </ion-text>
+            </div>
+            <ion-label
+             class="content-alignment"
+            >
+                Phone Contact
+              </ion-label>
+              <ion-input 
+                class="content-alignment"
+                placeholder="Enter Phone Contact"
+                formControlName="phoneContact" 
+                id="search"
+              ></ion-input>
+            <div  *ngIf="(feedBackForm.controls['phoneContact'].touched || feedBackForm.controls['phoneContact'].dirty )
+              && !feedBackForm.controls['phoneContact'].valid">
+                <ion-text class="content-alignment" color="danger" [hidden]="!feedBackForm.controls['phoneContact'].errors.required">
+                  Phone Contact  is required
+                </ion-text>
+            </div>
+            <div *ngIf="submitButton">
+                <ion-label
+                class="content-alignment"
+                
+                >
+                  Subject
+                </ion-label>
+                  <ion-textarea 
+                   class="content-alignment"
+                   placeholder="Enter Subject"
+                   formControlName="subject" 
+                   id="search"
+                   >
+                  </ion-textarea>
+                 <div  *ngIf="(feedBackForm.controls['subject'].touched || feedBackForm.controls['subject'].dirty )
+                  && !feedBackForm.controls['subject'].valid">
+                    <ion-text class="content-alignment" color="danger" [hidden]="!feedBackForm.controls['subject'].errors.required">
+                      Subject  is required
+                    </ion-text>
+                  </div>
+            </div>
+        <br>
+        <br>
+        <div *ngIf="showAudio">
+            <ion-button  size="large"  color="primary" expand="block" (click)="recordAudio()">
+              Record Audio
+              <ion-icon style="margin-left: 10px;"  name="film"></ion-icon>
+            </ion-button>
+        </div>
+        <div *ngIf="showVideo">
+            <ion-button   size="large" color="primary" (click)="recordVideo()"  expand="block">
+              Record Video
+              <ion-icon style="margin-left: 10px;" name="videocam"></ion-icon>
+            </ion-button>
+        </div>
+        <ion-button  size="large"  *ngIf="submitButton" id="submitForm" expand="block" [disabled]="feedBackForm.invalid" type="submit" color="primary">
+          REPORT
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

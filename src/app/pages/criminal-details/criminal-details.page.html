@@ -19,14 +19,17 @@
         </p>
       </ion-card-header>
       <ion-card-content>
-        <ion-text style="word-wrap: break-word;font-size: 15px;color: #13346e;">
+        <p style="font-size: 16px;color:#000000;"  class="ion-text-justify">
             {{ specificSection[0].section}}
-        </ion-text>
+        </p>
         <div *ngIf="specificSection[0].steps.length !== 0">
-          <ul *ngFor="let step of specificSection[0].steps">
-              <li style="border-bottom: 2px solid #13346e;font-size: 15px;color: #13346e;padding-bottom: 10px;">{{ step.step }}</li>
-              <hr>
-          </ul>
+            <ion-list *ngFor="let step of specificSection[0].steps">
+                <ion-item>
+                  <p class="ion-text-justify" style="font-size: 16px;color:#000000;">
+                      {{ step.step }}
+                  </p>
+                </ion-item>
+            </ion-list>
         </div>
       </ion-card-content>
   </ion-card>

@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>{{ singleList.parties }}</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+      <table>
+        <tr style="border: none;">
+          <td>Case Number:</td>
+          <td>{{ singleList.caseNumber }}</td>
+        </tr>
+      </table>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item-divider style="background-color:#13346e;color: #ffff;">
+          <ion-label>
+            Time
+          </ion-label>
+        </ion-item-divider>
+      <ion-item>
+         <b>{{ singleList.time }}</b>
+      </ion-item>
+      <ion-item-divider style="background-color:#13346e;color: #ffff;">
+          <ion-label>
+            Parties
+          </ion-label>
+        </ion-item-divider>
+      <ion-item>
+        <b>{{ singleList.parties }}</b>
+      </ion-item>
+      <ion-item-divider style="background-color:#13346e;color: #ffff;">
+          <ion-label>
+            Claims
+          </ion-label>
+        </ion-item-divider>
+      <ion-item>
+        <b>{{ singleList.claims }}</b>
+      </ion-item>
+      <ion-item-divider style="background-color:#13346e;color: #ffff;">
+          <ion-label>
+              Sitting Type
+          </ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <b>{{ singleList.sittingType }}</b>
+      </ion-item>
+      <ion-item-divider style="background-color:#13346e;color: #ffff;">
+          <ion-label>
+              Sitting Type
+          </ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <b>{{ singleList.position }}</b>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  

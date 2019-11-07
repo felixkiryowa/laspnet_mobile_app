@@ -25,9 +25,9 @@ export class FindCaseResultsPage implements OnInit {
     });
   }
 
-  // Function to push data to a detail page
+  // Function to push data to cause list detail page
   goToFoundCaseDetailsPage(data: any){
-    this.router.navigate(['/find-case-details'],{
+    this.router.navigate(['/cause-list-details'],{
     queryParams: {
        value : JSON.stringify(data)
       },

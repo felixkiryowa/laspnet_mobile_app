@@ -65,3 +65,52 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+#search {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 2px solid gray; 
+  color: #000000;
+  margin-left: 5px;
+}
+
+
+#rounded {
+  margin-bottom: 20px;
+  color: gray;
+}
+
+ion-label {
+  color: gray;;
+}
+
+
+.native-input,.sc-ion-input-ios {
+  padding-left: 10px;
+}
+
+.content-alignment {
+  padding-left:10px !important;
+}
+
+
+
+
